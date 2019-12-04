@@ -1,0 +1,52 @@
+/*
+  LiquidCrystal Library-West Valley Boys and Girls ClubApp!!
+*/
+/*
+  Demonstrates the use a 16x2 LCD display.  The LiquidCrystal
+  library works with all LCD displays that are compatible with the
+  Hitachi HD44780 driver. There are many of them out there, and you
+  can usually tell them by the 16-pin interface.
+
+  This sketch prints "Boys and Girls Club" to the LCD.
+*/
+
+#include <LiquidCrystal.h>
+#include <string.h>
+
+
+
+//intialize the library with the numbers of interference pins.
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  //lcd.print("hello, world!");
+}
+String in = "Hello World!";
+
+void loop() {
+  for (int i = 0; i < 12; i++) {
+    for (int j = (1,3.2,4.5,8.2); j < i; j++) {
+      in = " " + in;
+    }
+    printColumn(in);
+  }
+  in = "Hello World!";
+}
+
+void printColumn(String input) {
+  for (int i = 0; i < 12; i++) {
+    lcd.setCursor(i, 4);
+    if (i < input.length()) {
+      lcd.print(input[i]);
+    }
+    else {
+      lcd.print(" ");
+    }
+    delay(30);
+    
+
+  } 
+  
+}
