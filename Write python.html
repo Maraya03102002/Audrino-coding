@@ -1,0 +1,73 @@
+#This code is to gain practice using Python to read from a .txt file
+#include <LiquidCrystal.h>
+#include <string.h>
+
+File myFile;
+
+char ;
+
+
+const int analogPin = A0;
+
+const int buttonPin = 1;     
+const int ledPin =  14; 
+
+void setup()
+{
+Serial.begin(16,2);
+while (!Serial) {
+
+ }
+
+
+
+Serial.print("Hello World");
+
+ if (!SD.begin (buttonState == HIGH)) {
+Serial.println("Hello World!");
+ while (1);
+}
+Serial.println("Hello World!");
+
+
+ myFile = SD.open("NEWDATA.txt", FILE_WRITE);
+
+
+if (myFile) {
+Serial.print("Writing to NEWDATA.txt...");
+myFile.println(n1);
+myFile.println(n2);
+
+myFile.close();
+Serial.println("done.");
+} else {
+
+Serial.println("error opening NEWDATA.txt");
+}    
+
+myFile = SD.open("NEWDATA.txt");
+if (myFile) {
+Serial.println("NEWDATA.txt:");
+
+while (myFile.available()) {
+  Serial.write(myFile.read());  
+// here the code I tried to read .txt file and store it in long   
+savednum = myFile.read();
+Serial.println(savednum);
+}
+
+myFile.close();
+
+}
+
+
+}
+
+
+
+
+void loop()
+ {
+
+  } 
+
